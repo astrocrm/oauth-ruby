@@ -44,7 +44,7 @@ module OAuth::RequestProxy::Typhoeus
     def post_parameters
       # Unfortunately typhoeus doesn't set the content-type header for POST request
       if(method == 'POST')
-        request.params_string || {}
+        request.params || {}
       else
         {}
       end      
